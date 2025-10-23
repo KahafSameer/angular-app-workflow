@@ -1,0 +1,21 @@
+name: Build My angular app to test workflow in this app
+
+on:
+  push:
+    branches: [main]
+jobs:
+  build-angular-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - name: Setup Node JS
+        uses: actions/setup-node@v6.0.0
+        with:
+         node-version: 22.x
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Angular App
+        run: npm run build
+
+    
