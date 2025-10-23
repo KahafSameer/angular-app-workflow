@@ -1,0 +1,22 @@
+<div class="notes-app">
+  <header class="app-header">
+    <h1>Docker Notes for DevOps Beginners</h1>
+    <p>Learn Docker fundamentals step by step</p>
+  </header>
+
+  <div class="notes-container">
+    @for (category of getCategories(); track category) {
+      <section class="category-section">
+        <h2 class="category-title">{{ category }}</h2>
+        <div class="notes-grid">
+          @for (note of getNotesByCategory(category); track note.title) {
+            <div class="note-card">
+              <h3 class="note-title">{{ note.title }}</h3>
+              <p class="note-content">{{ note.content }}</p>
+            </div>
+          }
+        </div>
+      </section>
+    }
+  </div>
+</div>
